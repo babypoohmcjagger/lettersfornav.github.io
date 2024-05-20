@@ -75,11 +75,8 @@ footer div {
     padding: 10px 20px;
 }
 
-/* Style for the project grid */
 .project-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    display: block; /* Change to block layout */
     padding: 20px;
     max-width: 1200px;
     margin: auto;
@@ -87,9 +84,7 @@ footer div {
 
 .project-slot {
     perspective: 1000px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-bottom: 20px; /* Add some space between the cards */
 }
 
 .flip-card {
@@ -128,7 +123,7 @@ footer div {
 
 .flip-card-front img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -144,7 +139,7 @@ footer div {
 
 .flip-card-back img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
 }
 
