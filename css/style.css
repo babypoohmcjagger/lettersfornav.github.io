@@ -6,19 +6,22 @@ html {
 /* Ensure the page stretches to the edge of the browser window */
 body {
     margin: 0;
+    font-family: 'Alice', serif;
+    background-color: #FEFEE3;
 }
 
 header,
 footer {
-    background-color: #4C956C;
+    background-color: #A3AADA;
     text-align: center;
     color: #FEFEE3;
-    font-family: 'Alice', serif;
 }
 
 header {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 h1 {
@@ -56,17 +59,12 @@ h1 {
 }
 
 .myButton:hover {
-    background-color: #FFC9B9;
+    background-color: #D19BA7;
 }
 
 .myButton:active {
     position: relative;
     top: 1px;
-}
-
-.container {
-    margin: auto;
-    background-color: #FEFEE3;
 }
 
 footer div {
@@ -76,9 +74,95 @@ footer div {
     padding: 10px 20px;
 }
 
+/* Style for the project grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.project-slot {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card {
+    width: 100%;
+    height: 300px; /* Adjusted height for visibility */
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.flip-card-inner {
+    position: relative; /* Changed to relative */
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D19BA7;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flip-card-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #A3AADA;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flip-button {
+    border-radius: 28px;
+    border: 1px solid #FEFEE3;
+    cursor: pointer;
+    color: #FEFEE3;
+    font-size: 25px;
+    padding: 16px 31px;
+    background-color: transparent;
+    text-decoration: none;
+    position: absolute;
+    bottom: 10%;
+}
+
 /* Responsive design for smaller screens */
 @media all and (max-width: 700px) {
-    main {
+    .project-grid {
         grid-template-columns: 1fr;
     }
 }
