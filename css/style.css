@@ -56,6 +56,7 @@ h1 {
     padding: 16px 31px;
     text-decoration: none;
     margin: 1.69em auto;
+    font-family: 'Alice', serif; /* Ensure button uses the same font */
 }
 
 .myButton:hover {
@@ -158,6 +159,7 @@ footer div {
     text-decoration: none;
     position: absolute;
     bottom: 10%;
+    font-family: 'Alice', serif; /* Ensure button uses the same font */
 }
 
 /* Responsive design for smaller screens */
